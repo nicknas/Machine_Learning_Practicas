@@ -1,5 +1,5 @@
 function theta = descenso_gradiente_multivariable(x, y, theta_init, alpha, n)
-  m = length(x);
+  m = columns(x);
 	theta = theta_init;
   [x_norm, mu, sigma] = normaliza_atributo(x');
 	hx = ([ones(1,m);(x_norm)'])';

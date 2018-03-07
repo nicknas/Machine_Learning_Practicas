@@ -1,5 +1,5 @@
 function theta = descenso_gradiente(x, y, theta_init, alpha, n) 
-	m = length(x);
+	m = columns(x);
 	theta = theta_init;
 	hx = ([ones(1,m);x])';
 	y = y';
