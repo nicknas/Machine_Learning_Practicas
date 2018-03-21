@@ -2,6 +2,7 @@ source("sigm.m");
 source("coste.m");
 source("mapFeature.m");
 source("plotDecisionBoundary.m");
+source("eval.m");
 
 # Cargar datos
 d1 = load("ex2data1.txt");
@@ -19,11 +20,11 @@ coste([0;0;0], d1X, d1y);
 
 # fminunc
 opciones = optimset('GradObj', 'on', 'MaxIter', 400);
-[theta, cost] = fminunc(@(t)(coste(t, d1X, d1y)), [0; 0; 0], opciones);
+[theta, cost] = fminunc(@(t)(coste(t, d1X, d1y)), [0; 0; 0], opciones)
 
 # Graficar datos con theta
 d1X_entera = [ones(1, length(d1X))', d1X];
 plotDecisionBoundary(theta, d1X_entera, d1y);
 
 # Porcentaje
-eval(theta, d1X, d1y);
+eval(theta, d1X, d1y)
