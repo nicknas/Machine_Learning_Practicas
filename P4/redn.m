@@ -9,6 +9,6 @@ aux = [ones(rows(aux),1), aux];
 results = sigm(aux * Theta2');
 # Obtenemos los indices correspondientes al maximo de cada fila, los cuales
 # indican que clases interpreta esta red neuronal para cada ejemplo
-%[max_value, max_index] = max(results, [], 2);
-out = results;
+[max_value, max_index] = max(results, [], 2);
+out = max_index;
 endfunction
